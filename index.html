@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Joni Leinonen – IT Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portfolio of Joni Leinonen, Business Information Technology student with skills in web development, automation and Microsoft 365.">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-dark: #0A0C19;
+            --accent: #3074A4;
+            --accent-light: #A8A8C4;
+            --text-light: #F4F4F8;
+            --text-muted: #C3C3D9;
+            --card-bg: #131626;
+            --border-radius: 14px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Josefin Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top, #182135 0, #050711 55%, #020308 100%);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--accent-light);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #ffffff;
+        }
+
+        /* Layout */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            backdrop-filter: blur(16px);
+            background: linear-gradient(to bottom, rgba(10, 12, 25, 0.92), rgba(10, 12, 25, 0.65));
+            border-bottom: 1px solid rgba(168, 168, 196, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0.65rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            color: var(--accent-light);
+        }
+
+        nav a {
+            margin-left: 1.25rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1.5rem;
+        }
+
+        section {
+            margin: 3rem 0;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+            color: var(--accent-light);
+        }
+
+        /* Hero */
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.4fr);
+            gap: 2.25rem;
+            align-items: center;
+            padding: 3rem 0 2.5rem;
+        }
+
+        .hero-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin: 0 0 0.75rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--accent-light);
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .badge {
+            border-radius: 999px;
+            border: 1px solid rgba(168, 168, 196, 0.35);
+            padding: 0.25rem 0.8rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.09em;
+            color: var(--text-muted);
+        }
+
+        .hero-text {
+            color: var(--text-muted);
+            max-width: 36rem;
+        }
+
+        .hero-actions {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .btn-primary,
+        .btn-ghost {
+            border-radius: 999px;
+            padding: 0.55rem 1.3rem;
+            font-size: 0.9rem;
+            border: 1px solid transparent;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent), #45a0df);
+            border-color: rgba(255, 255, 255, 0.06);
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            filter: brightness(1.05);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            border-color: rgba(168, 168, 196, 0.5);
+            color: var(--accent-light);
+        }
+
+        .btn-ghost:hover {
+            background: rgba(168, 168, 196, 0.08);
+        }
+
+        .hero-meta {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 1.25rem;
+        }
+
+        .hero-card {
+            background: radial-gradient(circle at top, #27304a 0, #090b16 60%);
+            border-radius: 24px;
+            padding: 1.8rem;
+            border: 1px solid rgba(168, 168, 196, 0.3);
+            box-shadow: 0 18px 55px rgba(0, 0, 0, 0.65);
+        }
+
+        .hero-card h2 {
+            font-size: 1.1rem;
+            margin-top: 0;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero-card ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0.25rem 0 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .hero-card li {
+            margin-bottom: 0.25rem;
+        }
+
+        .hero-card-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.09em;
+            color: var(--accent-light);
+            margin-bottom: 0.4rem;
+        }
+
+        hr.divider {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, rgba(168, 168, 196, 0.2), transparent);
+            margin: 2.5rem 0 1.5rem;
+        }
+
+        /* Grid & cards */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.3rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 1.2rem 1.25rem;
+            border: 1px solid rgba(168, 168, 196, 0.2);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            font-size: 1rem;
+        }
+
+        .meta {
+            font-size: 0.85rem;
+            color: var(--accent-light);
+            margin-bottom: 0.35rem;
+        }
+
+        .pill-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+            margin-top: 0.75rem;
+            font-size: 0.78rem;
+        }
+
+        .pill {
+            border-radius: 999px;
+            padding: 0.18rem 0.7rem;
+            border: 1px solid rgba(168, 168, 196, 0.35);
+            color: var(--text-muted);
+        }
+
+        /* Lists */
+        ul.clean {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        ul.clean li {
+            margin-bottom: 0.35rem;
+        }
+
+        /* Contact */
+        .contact-box {
+            display: grid;
+            grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+            gap: 1.8rem;
+            align-items: start;
+        }
+
+        .contact-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .contact-list li {
+            margin-bottom: 0.3rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem 1rem 2.5rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 860px) {
+            .hero {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .hero-card {
+                order: -1;
+            }
+
+            .grid-2,
+            .grid-3,
+            .contact-box {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-container {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            nav a {
+                margin-left: 0;
+                margin-right: 1rem;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Scroll animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .scroll-reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .scroll-reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        .scroll-reveal-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .scroll-reveal-left.revealed {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scroll-reveal-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .scroll-reveal-right.revealed {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <div class="logo">JONI LEINONEN</div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- HERO -->
+    <section class="hero" id="top">
+        <div class="scroll-reveal">
+            <p class="badge">Business Information Technology • HAMK</p>
+            <h1 class="hero-title">IT Student</h1>
+            <p class="hero-subtitle">Web development, Microsoft 365, automation & customer-oriented IT solutions.</p>
+
+            <div class="hero-badge-row">
+                <span class="badge">Python & Java</span>
+                <span class="badge">WordPress FSE</span>
+                <span class="badge">SharePoint & Power Automate</span>
+                <span class="badge">SQL & Data</span>
+            </div>
+
+            <p class="hero-text">
+                I’m <strong>Joni Leinonen</strong>, a Business Information Technology student at HAMK with a strong
+                background in customer service and a growing skill set in software development, web technologies
+                and Microsoft 365 automation. I enjoy building practical solutions that actually help people:
+                from IT Help Desk tools to clean portfolio and company websites. Let's connect!
+            </p>
+
+            <div class="hero-actions">
+                <a class="btn-primary" href="#projects">View selected projects</a>
+                <a class="btn-ghost" href="#contact">Get in touch</a>
+            </div>
+
+            <p class="hero-meta">
+                Based in Finland · Strong English & Finnish · Open to junior/trainee IT roles in Tampere / Hämeenlinna
+            </p>
+        </div>
+
+        <aside class="hero-card scroll-reveal scroll-reveal-right">
+            <div class="hero-card-label">Quick profile</div>
+            <h2>Business Information Technology Student</h2>
+            <ul>
+                <li><strong>Location:</strong> Finland</li>
+                <li><strong>Email:</strong> <a href="mailto:jonileinonen89@gmail.com">jonileinonen89@gmail.com</a></li>
+                <li><strong>Phone:</strong> +358 45 111 6528</li>
+                <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/jonileinonen" target="_blank" rel="noreferrer">linkedin.com/in/jonileinonen</a></li>
+                <li><strong>GitHub:</strong> <a href="https://github.com/Joskari98" target="_blank" rel="noreferrer">github.com/Joskari98</a></li>
+            </ul>
+        </aside>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- ABOUT -->
+    <section id="about">
+        <h2 class="section-title scroll-reveal">About me</h2>
+        <div class="grid-2 scroll-reveal">
+            <div>
+                <p>
+                    I’m a calm, reliable and detail-oriented person with a strong background in
+                    <strong>customer service</strong> and tourism, now transitioning into
+                    <strong>IT and software development</strong>.
+                </p>
+                <p>
+                    My studies in Business Information Technology at HAMK focus on programming,
+                    databases, web development and modern digital workplaces. I particularly enjoy
+                    combining <strong>Microsoft 365 tools</strong>, <strong>automation flows</strong> and
+                    <strong>clean UX</strong> to make everyday work smoother.
+                </p>
+                <p>
+                    Thanks to years of front-line customer work and working on projects in multicultural teams I’m comfortable communicating with different
+                    kinds of people, explaining technical things clearly and staying calm under pressure.
+                </p>
+            </div>
+            <div>
+                <h3>What I’m looking for</h3>
+                <ul class="clean">
+                    <li>• Trainee / junior roles in IT, automation, web dev or M365</li>
+                    <li>• Opportunities in Tampere, Hämeenlinna or remote-friendly</li>
+                    <li>• Teams where I can keep learning and contribute quickly</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <h2 class="section-title scroll-reveal">Skills</h2>
+        <div class="grid-3">
+            <div class="card scroll-reveal scroll-reveal-delay-1">
+                <h3>Programming & Web</h3>
+                <ul class="clean">
+                    <li>• Python – scripting & small tools</li>
+                    <li>• Java – OOP basics</li>
+                    <li>• PHP – forms & simple CRUD</li>
+                    <li>• C++ – basics</li>
+                    <li>• HTML & CSS – responsive layouts</li>
+                </ul>
+            </div>
+
+            <div class="card scroll-reveal scroll-reveal-delay-2">
+                <h3>Microsoft 365 & Cloud</h3>
+                <ul class="clean">
+                    <li>• SharePoint – lists, structures, sites</li>
+                    <li>• Power Automate – flows, IT ticket automation</li>
+                    <li>• PowerApps – forms & simple apps</li>
+                    <li>• Teams integrations</li>
+                    <li>• Word, Excel, PowerPoint (advanced user)</li>
+                </ul>
+            </div>
+
+            <div class="card scroll-reveal scroll-reveal-delay-3">
+                <h3>Data & Tools</h3>
+                <ul class="clean">
+                    <li>• SQL (MySQL, phpMyAdmin, SQL Server Management Studio)</li>
+                    <li>• Python for Data Analysis (k-Nearest Neighbors, SVM, pandas, NumPy)</li>
+                    <li>• ETL basics (Excel, CSV preprocessing, basic validation)</li>
+                    <li>• Docker, Unity Hub</li>
+                    <li>• VS Code, Visual Studio 2022</li>
+                    <li>• WordPress FSE</li>
+                </ul>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="grid-2">
+            <div class="card scroll-reveal scroll-reveal-left">
+                <h3>Languages</h3>
+                <ul class="clean">
+                    <li>• Finnish – native</li>
+                    <li>• English – excellent</li>
+                    <li>• Swedish – intermediate</li>
+                    <li>• Spanish – basic</li>
+                </ul>
+            </div>
+            <div class="card scroll-reveal scroll-reveal-right">
+                <h3>Certificates & Licences</h3>
+                <ul class="clean">
+                    <li>• Hygiene Passport (2015)</li>
+                    <li>• Tourism Safety Passport (2018)</li>
+                    <li>• Alcohol Serving Certificate (2018)</li>
+                    <li>• B driving licence (automatic)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+        <h2 class="section-title scroll-reveal">Selected projects</h2>
+        <div class="grid-2">
+            <article class="card scroll-reveal scroll-reveal-left">
+                <h3>IT Help Desk Copilot & Automation</h3>
+                <p class="meta">SharePoint · Power Automate · Copilot Studio · JSON</p>
+                <p>
+                    Built a working IT support concept that allows users to submit tickets, ask
+                    follow-up questions and view their latest cases. The solution uses SharePoint lists
+                    for storage, Power Automate flows to fetch and format the data, and Copilot Studio
+                    to provide a conversational interface.
+                </p>
+                <div class="pill-row">
+                    <span class="pill">Ticket forms</span>
+                    <span class="pill">Flow automation</span>
+                    <span class="pill">SharePoint lists</span>
+                    <span class="pill">Copilot Studio</span>
+                </div>
+            </article>
+
+            <article class="card scroll-reveal scroll-reveal-right">
+                <h3>WordPress FSE Company Website</h3>
+                <p class="meta">WordPress · Full Site Editing · Custom block theme</p>
+                <p>
+                    Designed and built a multi-page website for a fictional ICT / gaming company as a school project
+                    (computers, mice, keyboards). Implemented a custom block-based theme, navigation,
+                    product listing pages, hero sections and a consistent visual identity using my own
+                    color palette and typography.
+                </p>
+                <div class="pill-row">
+                    <span class="pill">FSE</span>
+                    <span class="pill">Navigation & templates</span>
+                    <span class="pill">Product layout</span>
+                </div>
+            </article>
+        </div>
+
+        <div class="grid-2" style="margin-top:1.3rem;">
+            <article class="card scroll-reveal scroll-reveal-left">
+                <h3>Design Factory Project</h3>
+                <p class="meta">Figma · Confluence · Jira</p>
+                <p>
+                    As part of my studies and in collaboration with a commissioning company, I worked in a multicultural team to design a gamified setup wizard that supports users in creating new communities on the platform of the company.
+                </p>
+                <div class="pill-row">
+                    <span class="pill">Prototyping</span>
+                    <span class="pill">User research</span>
+                    <span class="pill">UX Design</span>
+                </div>
+            </article>
+
+            <article class="card scroll-reveal scroll-reveal-right">
+                <h3>Python Utilities & Games</h3>
+                <p class="meta">Python · Input validation · CLI</p>
+                <p>
+                    Built small Python programs such as guessing games and automation scripts focusing
+                    on user input validation, graceful error handling and a clear structure. Used these
+                    exercises to strengthen general programming logic.
+                </p>
+                <div class="pill-row">
+                    <span class="pill">CLI apps</span>
+                    <span class="pill">User input</span>
+                    <span class="pill">Error handling</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+        <h2 class="section-title scroll-reveal">Work experience</h2>
+        <div class="grid-2">
+            <div class="card scroll-reveal scroll-reveal-left">
+                <h3>Mobilia – Customer Service</h3>
+                <p class="meta">11/2021 – 09/2024 · Museum & Souvenir Shop</p>
+                <ul class="clean">
+                    <li>• Ticket and museum shop sales</li>
+                    <li>• Customer service via phone and email</li>
+                    <li>• Preparing and guiding group visits</li>
+                    <li>• Giving guided tours of the museum exhibits</li>
+                    <li>• Handling online shop orders</li>
+                    <li>• Assisting with social media & general museum tasks</li>
+                </ul>
+            </div>
+
+            <div class="card scroll-reveal scroll-reveal-right">
+                <h3>Visit Tampere – Internship</h3>
+                <p class="meta">07/2020 – 12/2020 · Tourism & events</p>
+                <ul class="clean">
+                    <li>• Customer service for tourists and locals (phone & email)</li>
+                    <li>• Updating website content through WordPress and event calendar</li>
+                    <li>• General office and data tasks</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="grid-2" style="margin-top:1.3rem;">
+            <div class="card scroll-reveal scroll-reveal-left">
+                <h3>Event & Sports Volunteer Roles</h3>
+                <p class="meta">Ruka Nordic 2018 & IAAF U20 Championships 2018</p>
+                <ul class="clean">
+                    <li>• Media centre info and logistics at Ruka Nordic</li>
+                    <li>• Printing competition lists and guiding media staff</li>
+                    <li>• Call Room assistant at IAAF U20 Championships</li>
+                    <li>• Checking equipment and escorting athletes</li>
+                </ul>
+            </div>
+
+            <div class="card scroll-reveal scroll-reveal-right">
+                <h3>TAYS & A-Insinöörit – Office & Data</h3>
+                <p class="meta">2016 – 2017</p>
+                <ul class="clean">
+                    <li>• Updating contact information and training registrations in Excel (TAYS)</li>
+                    <li>• Editing Moodle course content and Excel-based statistics</li>
+                    <li>• Digitising construction documents and listing data in Excel (A-Insinöörit)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+        <h2 class="section-title scroll-reveal">Education</h2>
+        <div class="grid-2">
+            <div class="card scroll-reveal scroll-reveal-left">
+                <h3>Häme University of Applied Sciences (HAMK)</h3>
+                <p class="meta">Bachelor of Business Information Technology · 08/2024 –</p>
+                <p>
+                    Focus areas: programming, databases, web development, Microsoft 365, cloud services and
+                    digital workplaces.
+                </p>
+            </div>
+            <div class="card scroll-reveal scroll-reveal-right">
+                <h3>Haaga-Helia University of Applied Sciences</h3>
+                <p class="meta">Bachelor of Hospitality & Tourism Management · 2018 – 2021</p>
+                <p>
+                    Studies in tourism, customer experience and service design – a strong foundation for
+                    user-centric IT solutions.
+                </p>
+            </div>
+        </div>
+
+        <div class="card scroll-reveal" style="margin-top:1.3rem; max-width:540px;">
+            <h3>Tammerkoski Upper Secondary School</h3>
+            <p class="meta">Matriculation Examination · 2014 – 2017</p>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <h2 class="section-title scroll-reveal">Contact</h2>
+        <div class="contact-box scroll-reveal">
+            <div class="card">
+                <h3>Let’s talk</h3>
+                <p>
+                    I’m open to junior / trainee roles in IT, automation, web development
+                    and Microsoft 365 in the Tampere and Hämeenlinna region or remote-friendly roles.
+                </p>
+                <p>
+                    If my background looks interesting, feel free to reach out by email or connect
+                    on LinkedIn – I’m happy to share my full CV or talk through my projects in more detail.
+                </p>
+            </div>
+            <div class="card">
+                <h3>Details</h3>
+                <ul class="contact-list">
+                    <li><strong>Email:</strong> <a href="mailto:jonileinonen89@gmail.com">jonileinonen89@gmail.com</a></li>
+                    <li><strong>Phone:</strong> +358 45 111 6528</li>
+                    <li><strong>Location:</strong> Finland (Tampere / Hämeenlinna region)</li>
+                    <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/jonileinonen" target="_blank" rel="noreferrer">linkedin.com/in/jonileinonen</a></li>
+                    <li><strong>GitHub:</strong> <a href="https://github.com/Joskari98" target="_blank" rel="noreferrer">github.com/Joskari98</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    © <span id="year"></span> Joni Leinonen · Built with HTML & CSS
+</footer>
+
+<script>
+    // Set year in footer automatically
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Scroll reveal animation
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+            } else {
+                entry.target.classList.remove('revealed');
+            }
+        });
+    }, observerOptions);
+
+    // Observe all elements with scroll-reveal class
+    document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right').forEach(el => {
+        observer.observe(el);
+    });
+</script>
+
+</body>
+</html>
