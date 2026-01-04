@@ -15,10 +15,15 @@ Live site: https://joskari98.github.io
 ## Technologies
 - HTML
 - CSS
+- Java
+- Python
+- WordPress
 - Git & GitHub
 - GitHub Pages
 - Visual Studio Code
 - Microsoft Power Platform
+- Power BI
+- Docker
 - SQL
 
 ## Featured Project
